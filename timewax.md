@@ -13,46 +13,51 @@ user stories below as guidance for the implementation.
 
 ### User stories
 
-As a customer I want a shopping cart so that I can order multiple items in a
-single transaction. An item is something with an
-[SKU](https://en.wikipedia.org/wiki/Stock_keeping_unit), display name and price.
+> As a customer I want a shopping cart so that I can order multiple items in a
+> single transaction. An item is something with an
+> [SKU](https://en.wikipedia.org/wiki/Stock_keeping_unit) (i.e. ID), display
+> name and price.
 
-Acceptance criteria:
+**Acceptance criteria**:
 
 - Every item (SKU) in the cart needs to have a quantity between 1 and 1000.
-- Every mutation to the shopping cart needs to be recorded as an "event" with a
-  datetime (a future user story could be about writing these mutations to e.g.
-  Google Analytics, but for now this is out of scope!).
-- Must be able to return a list of items with their quantities (as a
+- Every **mutation** to the shopping cart needs to be **recorded as an "event"**
+  with a datetime (a future user story could be about writing these mutations to
+  e.g. Google Analytics, but for now this is out of scope!).
+- Must be able to return a **list of items** with their **quantities** (as a
   materialized view or as is).
-- Must be able to add and remove items.
-- Must be able to empty the entire cart in one operation.
-- Must be able to change the quantity of individual items.
+- Must be able to **add** and **remove** items.
+- Must be able to **empty** the entire cart in **one operation**.
+- Must be able to **change** the **quantity** of **individual items**.
 
-As a customer I want to be able to add a discount coupon so that I can receive
-my discount.
+---
 
-Acceptance criteria:
+> As a customer I want to be able to add a discount coupon so that I can receive
+> my discount.
 
-- We only support fixed percentage discounts (e.g. 10%), no special business
+**Acceptance criteria**:
+
+- We only support **fixed percentage** discounts (e.g. 10%), no special business
   rules about combinations, times of the week, minimum amount, et cetera.
-- Discount codes don't expire.
+- Discount codes **don't expire**.
 - As there is no database it is acceptable to configure the available discount
-  codes as part of the source code.
-- Only one discount can be applied to the shopping cart at a time.
+  codes as part of the source code (i.e. hardcoded codes).
+- Only **one discount** can be applied to the shopping cart **at a time**.
 
-As a customer I want to be able to see the accumulative value of the items in
-the shopping cart so that I know how much I need to pay when ordering.
+---
 
-Acceptance criteria:
+> As a customer I want to be able to see the accumulative value of the items in
+> the shopping cart so that I know how much I need to pay when ordering.
+
+**Acceptance criteria**:
 
 - Take the optional discount into account (see the user story about discounts).
 - Shipping costs are out of scope.
-- There is no minimum order amount.
+- There is **no minimum order** amount.
 
-Scope
+## Scope
 
-The assignment is meant to be completable in four hours or less, so keep it
+The assignment is meant to be completable in **four hours or less**, so keep it
 simple and approach it as an MVP or prototype implementation. Don't worry if you
 didn't quite get there in the allotted time.
 
@@ -68,7 +73,7 @@ important part is that you are able to explain your choices (e.g. just picking
 tools you're comfortable with or using that new programming language you always
 wanted to try).
 
-Don't worry about these things:
+**Don't worry about these things**:
 
 - The checkout process (including payment and handling customer information like
   a shipping address) is out of scope.
@@ -85,7 +90,7 @@ While out of scope, issues like the above might be part of the conversation
 after you've completed the assignment ("what if we were to add
 internationalisation?").
 
-The evaluation
+## The evaluation
 
 Please share the code on GitHub, BitBucket or similar before the appointment to
 evaluate your project. During that meeting you will get to present your work and
