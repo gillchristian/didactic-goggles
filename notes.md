@@ -80,7 +80,8 @@ data CartResponse = CartResponse
   } deriving (Eq, Show)
 ```
 
-- **Mutate cart** (add/remove item, increase/decrease count, apply discount code, empty cart)
+- **Mutate cart** (add/remove item, increase/decrease count, apply discount
+  code, empty cart)
 
 ```
 PUT /user/:user_id/cart
