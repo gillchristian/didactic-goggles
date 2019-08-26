@@ -8,20 +8,29 @@
   "scripts": {
     "format": "prettier --write 'src/*.ts' '**/*.md'",
     "start": "node build/index.js",
+    "dev": "nodemon build/index.js",
     "build": "tsc --pretty",
+    "build:watch": "tsc --pretty --watch",
     "ts:check": "tsc --pretty --noEmit --watch"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/dotenv": "^6.1.1",
     "@types/express": "^4.17.1",
+    "@types/morgan": "^1.7.37",
     "@types/node": "^12.7.2",
+    "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
     "typescript": "^3.5.3"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
-    "fp-ts": "^2.0.5",
+    "fp-ts": "^1.15.1",
     "hyper-ts": "^0.4.0",
     "io-ts": "^2.0.1",
-    "monocle-ts": "^2.0.0"
+    "monocle-ts": "^2.0.0",
+    "morgan": "^1.9.1"
   }
 }
