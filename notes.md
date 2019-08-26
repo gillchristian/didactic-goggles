@@ -10,6 +10,7 @@ Sunday
 
 Monday
 21.00 - Setup boilerplate
+22.00 - First user story (& fp-ts boilerplate)
 ```
 
 ## Solution Design

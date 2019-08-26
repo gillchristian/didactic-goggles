@@ -9,7 +9,7 @@ import {toRequestHandler} from 'hyper-ts/lib/express'
 
 import conf from './config'
 
-import {hello} from './api'
+import {hello, items, discounts} from './api'
 
 const app = express()
 
@@ -17,6 +17,8 @@ app.use(cors())
 app.use(morgan('tiny'))
 
 app.get('/', toRequestHandler(hello))
+app.get('/items', toRequestHandler(items))
+app.get('/discounts', toRequestHandler(discounts))
 
 console.log('Starting server with following config:')
 console.log(JSON.stringify(conf, null, 2))
