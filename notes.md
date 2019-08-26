@@ -1,11 +1,15 @@
 ## Development process
 
 ```
+Sunday
 18.00 - Started to read & understand requirements
 18.20 - Draft design of potential solution
 18.35 - Break
 18.40 - Draft design of potential solution (continue)
 19.10 - Break (design ready)
+
+Monday
+21.00 - Setup boilerplate
 ```
 
 ## Solution Design
@@ -83,8 +87,12 @@ PUT /user/:user_id/cart
 ```
 
 ```haskell
+type Count = Int
+
 data Mutation
-  = ChangeItemCount SKU Int
+  = AddItem SKU Count
+  | UpdateItem SKU Count
+  | DeleteItem SKU
   | ApplyDiscountCode DiscountCode
   | EmptyCart
   deriving (Show, Eq)
@@ -111,5 +119,29 @@ data Event = Event
   { time     :: Time
   , userID   :: UserID
   , mutation :: Mutation
+  } deriving (Eq, Show)
+```
+
+- **List events** (all the history of events)
+
+```
+GET /events
+```
+
+```haskell
+data EventsResponse = EventsResponse
+  { data :: [Event]
+  } deriving (Eq, Show)
+```
+
+- **List events for a user**
+
+```
+GET /events/:user_id
+```
+
+```haskell
+data EventsResponse = EventsResponse
+  { data :: [Event]
   } deriving (Eq, Show)
 ```
