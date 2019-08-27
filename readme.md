@@ -115,9 +115,12 @@ data RequestBody = RequestBody
 
 
 data MutationResponse = MutationResponse
-  { data :: Cart -- return the whole cart or only the price ?
+  { data :: Cart
   } deriving (Eq, Show)
 ```
+
+NOTE: [fixtures.txt](/blob/master/fixtures.txt) has predefined mutations to send
+for testing (using the dummy data of /items & /discounts).
 
 ### Events API
 
