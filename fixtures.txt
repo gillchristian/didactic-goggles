@@ -1,0 +1,24 @@
+AddItem
+
+{"mutation": {"type": "AddItem", "sku": "sku-qwe-123-123-qwe", "count": 1}}
+{"mutation": {"type": "AddItem", "sku": "sku-123-qwe-678-jkl", "count": 5}}
+{"mutation": {"type": "AddItem", "sku": "sku-asd-456-qwe-123", "count": 9}}
+
+UpdateItem
+
+{"mutation": {"type": "UpdateItem", "sku": "sku-asd-456-qwe-123", "count": 10}}
+{"mutation": {"type": "UpdateItem", "sku": "sku-123-qwe-678-jkl", "count": -1}}
+{"mutation": {"type": "UpdateItem", "sku": "sku-asd-456-qwe-123", "count": 10}}
+
+DeleteItem
+
+{"mutation": {"type": "DeleteItem", "sku": "sku-asd-456-qwe-123"}}
+{"mutation": {"type": "DeleteItem", "sku": "sku-jlm-713-jbl-678"}}
+
+EmptyCart
+
+{"mutation": {"type": "EmptyCart"}}
+
+ApplyDiscount
+
+{"mutation": {"type": "ApplyDiscount", "code": "discount-678"}}

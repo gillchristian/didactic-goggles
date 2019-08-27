@@ -1,18 +1,3 @@
-## Development process
-
-```
-Sunday
-18.00 - Started to read & understand requirements
-18.20 - Draft design of potential solution
-18.35 - Break
-18.40 - Draft design of potential solution (continue)
-19.10 - Break (design ready)
-
-Monday
-21.00 - Setup boilerplate
-22.00 - First user story (& fp-ts boilerplate)
-```
-
 ## Solution Design
 
 ### API
@@ -37,7 +22,8 @@ data Item = Item
 
 
 data ItemsResponse = ItemsResponse
-  { data :: [Item]
+  { data  :: [Item]
+  , count :: Int
   } deriving (Eq, Show)
 ```
 
@@ -58,7 +44,8 @@ data Discount = Discount
 
 
 data DiscountsResponse = DiscountsResponse
-  { data :: [Discount]
+  { data  :: [Discount]
+  , count :: Int
   } deriving (Eq, Show)
 ```
 
@@ -132,7 +119,8 @@ GET /events
 
 ```haskell
 data EventsResponse = EventsResponse
-  { data :: [Event]
+  { data  :: [Event]
+  , count :: Int
   } deriving (Eq, Show)
 ```
 
@@ -145,5 +133,6 @@ GET /events/:user_id
 ```haskell
 data EventsResponse = EventsResponse
   { data :: [Event]
+  , count :: Int
   } deriving (Eq, Show)
 ```

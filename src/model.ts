@@ -21,54 +21,62 @@ export const Discount = t.type(
 
 export type Discount = t.TypeOf<typeof Discount>
 
+export const MutationType = {
+  AddItem: 'AddItem',
+  UpdateItem: 'UpdateItem',
+  DeleteItem: 'DeleteItem',
+  EmptyCart: 'EmptyCart',
+  ApplyDiscount: 'ApplyDiscount',
+} as const
+
 const AddItem = t.type(
   {
-    type: t.literal('AddItem'),
+    type: t.literal(MutationType.AddItem),
     sku: t.string,
     count: t.number,
   },
-  'AddItem',
+  MutationType.AddItem,
 )
 
 const UpdateItem = t.type(
   {
-    type: t.literal('UpdateItem'),
+    type: t.literal(MutationType.UpdateItem),
     sku: t.string,
     count: t.number,
   },
-  'UpdateItem',
+  MutationType.UpdateItem,
 )
 
 const DeleteItem = t.type(
   {
-    type: t.literal('DeleteItem'),
+    type: t.literal(MutationType.DeleteItem),
     sku: t.string,
   },
-  'DeleteItem',
-)
-
-const ApplyDiscount = t.type(
-  {
-    type: t.literal('ApplyDiscount'),
-    code: t.string,
-  },
-  'ApplyDiscount',
+  MutationType.DeleteItem,
 )
 
 const EmptyCart = t.type(
   {
-    type: t.literal('EmptyCart'),
-    sku: t.string,
-    count: t.number,
+    type: t.literal(MutationType.EmptyCart),
   },
-  'EmptyCart',
+  MutationType.EmptyCart,
+)
+
+const ApplyDiscount = t.type(
+  {
+    type: t.literal(MutationType.ApplyDiscount),
+    code: t.string,
+  },
+  MutationType.ApplyDiscount,
 )
 
 export const Mutation = t.taggedUnion(
   'type',
-  [AddItem, UpdateItem, DeleteItem, ApplyDiscount, EmptyCart],
+  [AddItem, UpdateItem, DeleteItem, EmptyCart, ApplyDiscount],
   'Mutation',
 )
+
+export type Mutation = t.TypeOf<typeof Mutation>
 
 export const Cart = t.type(
   {
