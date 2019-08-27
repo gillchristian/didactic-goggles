@@ -1,0 +1,9 @@
+version: '2.2'
+
+services:
+  cart-api:
+    build: .
+    container_name: cart-api
+    ports:
+      - 8080:8080
+    env_file: .env
